@@ -63,7 +63,7 @@ $_SESSION['token'] = $token;
                 <p>
                     <?php echo htmlspecialchars($member['name'], ENT_QUOTES); ?> san、Welcome
                 </p>
-                <textarea name="post" cols='50' rows='10'><?php echo htmlspecialchars($post ?? '', ENT_QUOTES); ?></textarea>
+                <textarea name="post" cols='50' rows='10'><?php echo htmlspecialchars($_POST['post'] ?? '', ENT_QUOTES); ?></textarea>
             </div>
 
             <input type="submit" value="投稿する" class="button02">
