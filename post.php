@@ -15,8 +15,8 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
 
 if (!empty($_POST)) {
     if (isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
-        $post = $db->prepare('INSERT INTO posts SET created_by=?, post=?, created=NOW()');
-        $post->execute([$member['id'], $_POST['post']]);
+        $post_stmt = $db->prepare('INSERT INTO posts SET created_by=?, post=?, created=NOW()');
+        $post_stmt->execute([$member['id'], $_POST['post']]);
         header('Location: post.php');
         exit();
     } else {
